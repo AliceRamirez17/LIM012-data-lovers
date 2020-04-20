@@ -1,10 +1,10 @@
 import {
-  coincidencias,
+  coincidences,
   filterByType,
   orderAZ,
   orderZA,
   orderByMxCP,
-  redondeo,
+  rounded,
 } from '../src/data.js';
 
 const data = [
@@ -3482,21 +3482,21 @@ const output8 = [
   },
 ];
 
-describe('coincidencias', () => {
+describe('coincidences', () => {
   it('is a function', () => {
-    expect(typeof coincidencias).toBe('function');
+    expect(typeof coincidences).toBe('function');
   });
 
   it('Debería retornar un array con los elementos que empiecen por la letra c.', () => {
-    expect(coincidencias(data, 'c')).toEqual(output1);
+    expect(coincidences(data, 'c')).toEqual(output1);
   });
 
   it('Debería retornar un array con los elementos que contengan el número 1.', () => {
-    expect(coincidencias(data, '1')).toEqual(output2);
+    expect(coincidences(data, '1')).toEqual(output2);
   });
 
   it('Debería retornar un array con los elementos que sean igual a BLASTOISE.', () => {
-    expect(coincidencias(data, 'BLASTOISE')).toEqual(output3);
+    expect(coincidences(data, 'BLASTOISE')).toEqual(output3);
   });
 });
 
@@ -3542,16 +3542,16 @@ describe('orderByMxCP', () => {
   });
 });
 
-describe('redondeo', () => {
+describe('rounded', () => {
   it('is a function', () => {
-    expect(typeof redondeo).toBe('function');
+    expect(typeof rounded).toBe('function');
   });
 
   it('Debería retornar "682.19" para "682.1917808219179"', () => {
-    expect(redondeo(682.1917808219179, 2)).toBe(682.19);
+    expect(rounded(682.1917808219179, 2)).toBe(682.19);
   });
 
   it('Debería retornar "5.3" para "5.333333333"', () => {
-    expect(redondeo(5.333333333, 1)).toBe(5.3);
+    expect(rounded(5.333333333, 1)).toBe(5.3);
   });
 });
